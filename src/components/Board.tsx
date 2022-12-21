@@ -4,6 +4,7 @@ import { Column } from "./Column";
 import s from "./styles.css";
 
 export function Board(props) {
+  console.log(dndzone);
   function handleDndColumnsSorted(e) {
     props.onColumnItemsChange("columnItems", e.detail.items);
   }

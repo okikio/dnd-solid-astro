@@ -2,6 +2,7 @@ import { For } from 'solid-js';
 import { dndzone } from 'solid-dnd-directive';
 import s from './styles.css';
 export function Column(props) {
+  console.log(dndzone);
   function handleClick() {
     alert('dragabble elements are still clickable :)');
   }
