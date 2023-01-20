@@ -35,6 +35,14 @@ export class LayoutGrid extends HTMLElement {
 	get ints() {
 		return this.#$
 	}
+
+	setDir(dir: LayoutDirection) {
+		this.direction = dir;
+		this.#$.ints.states.delete(`--dirH`)
+		this.#$.ints.states.delete(`--dirV`)
+
+		this.#$.ints.states.add(`--dir${dir.at(0).toUpperCase()}`)
+	}
 }
 
 export class LayoutItem extends HTMLElement {
@@ -48,7 +56,7 @@ export class LayoutItem extends HTMLElement {
 			// split area into layout of opposing direction
 			let subgrid = new LayoutGrid()
 
-			subgrid.direction = 'vertical'
+			subgrid.setDir('vertical')
 
 			this.append(subgrid)
 
@@ -56,7 +64,7 @@ export class LayoutItem extends HTMLElement {
 
 			subgrid.append(subitem)
 
-			this.grid.ints.ints.states.add('--dir' + this.grid.ldir.at(0).toUpperCase())
+			// this.grid.ints.ints.states.add('--dir' + this.grid.ldir.at(0).toUpperCase())
 		}
 	}
 }
