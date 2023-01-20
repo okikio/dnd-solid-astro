@@ -1,3 +1,6 @@
+---
+import './test.css'
+---
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -6,8 +9,13 @@
 </head>
 <body>
 	<h1>Document</h1>
+	<p>
+		<button data-do="insert:before:item">Insert Before Item</button>
+		<button data-do="insert:after:item">Insert After Item</button>
+		<button data-do="insert:split:item">Split Item</button>
+	</p>
 </body>
 </html>
 <script>
-import './test.js'
+import './test.ts'
 </script>

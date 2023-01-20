@@ -1,0 +1,32 @@
+a-layout-grid {
+	display: flex;
+
+	/* Layout */
+	flex-grow: 1;
+	gap: 10px;
+	justify-content: space-between;
+	padding: 10px;
+
+	/* Appearance */
+	box-shadow: 0 0 0 1px inset;
+}
+
+a-layout-grid:--dirH {
+	flex-direction: row;
+}
+
+a-layout-grid:--dirV {
+	flex-direction: column;
+}
+
+a-layout-item {
+	display: flex;
+
+	/* Layout */
+	flex-grow: 1;
+	padding: 10px;
+
+	/* Appearance */
+	background-color: HotPink;
+	box-shadow: 0 0 0 1px inset;
+}
