@@ -1,0 +1,56 @@
+---
+import { Float } from "./Float"
+
+---
+
+<div class="floats">
+  {[1, 2, 3, 4].map(num => <Float num={num} />)}
+</div>
+
+<style lang="scss">
+  * {
+  box-sizing: border-box;
+}
+
+html {
+   --Canvas: #0E1525;
+   /*     --CanvasText: ; */
+  
+  --Float: #1C2333;
+  --FloatShadow: hsl(240 20% 1% / 30%);
+  --FloatBorder: hsl(225 21% 30% / 32%);
+  
+  --Radii: .5rem;
+  --Border: 0.00625rem; /* 0 0 0 */
+  --Shadow: 0rem .5rem 1rem 0rem;
+}
+
+html {
+  overflow: hidden;
+  
+  background-color: var(--Canvas);
+  color: var(--FloatText);
+}
+
+.float {
+  background-color: var(--Float);
+  border-radius: var(--Radii);
+  border: var(--Border);
+  border-color: var(--FloatBorder);
+  
+  width: 100%;
+  height: 100%;
+}
+
+.float:hover {
+}
+
+.float:active {
+  box-shadow: var(--Shadow) var(--FloatShadow);
+}
+
+body {
+  margin: 0;
+}
+
+</style>

@@ -1,9 +1,6 @@
 ---
 // Component Imports
-import App from "../components/App.tsx";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import Wrapper from "../components/Wrapper.astro";
 ---
 
 <html lang="en">
@@ -12,18 +9,17 @@ import App from "../components/App.tsx";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>x
+		<style>
+			@import "@acab/reset.css";
+
 			html,
 			body {
 				font-family: system-ui;
 				margin: 0;
 			}
-			body {
-				padding: 2rem;
-			}
 		</style>
 	</head>
 	<body>
-		<App client:load />
+		<Wrapper />
 	</body>
 </html>

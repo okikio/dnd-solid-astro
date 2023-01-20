@@ -11,10 +11,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/solid-js": "^1.2.3",
+    "@astrojs/solid-js": "2.0.0-beta.0",
     "@thisbeyond/solid-dnd": "^0.7.3",
-    "astro": "^1.7.2",
-    "solid-dnd-directive": "^0.2.0",
-    "solid-js": "^1.4.3"
+    "astro": "2.0.0-beta.2",
+    "solid-js": "^1.6.9"
+  },
+  "devDependencies": {
+    "@acab/reset.css": "^0.5.3",
+    "sass": "^1.57.1",
+    "solid-dnd-directive": "^0.2.0"
   }
 }

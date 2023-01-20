@@ -1,0 +1,102 @@
+---
+import { Zone } from "../components/Zone";
+---
+
+<div class="wrapper">
+  {[1, 2, 3, 4].map((num) => <div class:list={["zone", `zone-${num}`]} />)}
+  {[1, 2, 3, 4].map((num) => <div class:list={["float", `zone-${num}`]} />)}
+</div>
+
+<div class="floats">
+  {[1, 2, 3, 4].map((num) => <div class:list={["float", `float-${num}`]} />)}
+</div>
+
+<style lang="scss">
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --Canvas: #0e1525;
+    /*     --CanvasText: ; */
+
+    --Float: #1c2333;
+    --FloatShadow: hsl(240 20% 1% / 30%);
+    --FloatBorder: hsl(225 21% 30% / 32%);
+    --FloatBorderActive: hsl(225deg 21% 30%);
+
+    --Radii: 0.5rem;
+    --Border: 0.00625rem; /* 0 0 0 */
+    --Shadow: 0rem 0.5rem 1rem 0rem;
+  }
+
+  html {
+    overflow: hidden;
+
+    background-color: var(--Canvas);
+    color: var(--FloatText);
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .wrapper {
+    display: grid;
+    height: 100dvh;
+    width: 100dvw;
+
+    gap: 1rem;
+    grid-template-columns: 5fr 5fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "a1 a1 a2"
+      "a3 a4 a2";
+    padding: 1rem;
+  }
+
+  .zone {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+  }
+
+  .zone-1 {
+    grid-area: a1;
+  }
+
+  .zone-2 {
+    grid-area: a2;
+  }
+
+  .zone-3 {
+    grid-area: a3;
+  }
+
+  .zone-4 {
+    grid-area: a4;
+  }
+
+  .float {
+    transition: border 120ms, background 300ms, box-shadow 300ms;
+    transition-timing-function: ease-out;
+
+    background-color: var(--Float);
+    border-radius: var(--Radii);
+    border: var(--Border);
+    border-color: var(--FloatBorder);
+    border-style: solid;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .float:hover {
+    border-color: var(--FloatBorderActive);
+  }
+
+  .float:active {
+    --FloatBorderActive: #4E5569;
+    box-shadow: var(--Shadow) var(--FloatShadow);
+  }
+</style>
